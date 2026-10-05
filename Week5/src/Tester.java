@@ -10,5 +10,4 @@ public class Tester {
 		Person p3 = ale.returnPerson("John");
 		System.out.println(p3.getAddress());
 	}
-
 }
