@@ -5,18 +5,9 @@ public class GameModel {
 	private int releaseYear;
 	private int rating;
 	private String completionStatus;
-
-	public GameModel(String title, String genre, int releaseYear, int rating, String completionStatus) {
-		this.title = title;
-		this.genre = genre;
-		this.releaseYear = releaseYear;
-		this.rating = rating;
-		this.completionStatus = completionStatus;
-	}
-
+	
 	public void setTitle(String title) {
 		this.title = title;
-
 	}
 
 	public String getTitle() {

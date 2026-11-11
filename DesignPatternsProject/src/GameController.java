@@ -25,7 +25,7 @@ public class GameController {
 	 public void setRYear(int releaseYear) {
 		 model.setRYear(releaseYear);
 	 }
-	 public int setRYear() {
+	 public int getRYear() {
 		 return model.getRYear();
 	 }
 	 public void setRating(int rating) {
