@@ -1,14 +1,17 @@
 
 import java.io.*;
+import java.rmi.*;
+import java.rmi.server.*;
 
-public class GameModel implements Serializable {
+
+public class GameModel extends UnicastRemoteObject implements GameInterface, Serializable {
 	private String title;
 	private String genre;
 	private int releaseYear;
 	private int rating;
 	private String completionStatus;
 	
-	public GameModel(String title, String genre, int releaseYear, int rating, String completionStatus) {
+	public GameModel(String title, String genre, int releaseYear, int rating, String completionStatus) throws RemoteException {
 		this.title = title;
 		this.genre = genre;
 		this.releaseYear = releaseYear;

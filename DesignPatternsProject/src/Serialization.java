@@ -13,6 +13,7 @@ public class Serialization {
 			}
 		}
 		
+		
 		public ArrayList<GameModel> load(){
 			ArrayList<GameModel> games = new ArrayList<GameModel>();
 			try {

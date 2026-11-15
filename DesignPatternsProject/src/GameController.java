@@ -1,49 +1,12 @@
 
-import java.awt.event.*;
+import java.rmi.*;
 
 public class GameController {
-	 private GameModel model;
+	 private GameInterface interface;
 	 private GameView view;
 	 
-	 public GameController(GameModel model, GameView view) {
-		 this.model = model;
+	 public GameController(GameView view, GameInterface interface) {
+		 this.gameI = gameI;
 		 this.view = view;
 	 }
 	 
-	 public void setGameTitle(String title) {
-		 model.setTitle(title);
-	 }
-	 public String getGameTitle() {
-		 return model.getTitle();
-	 }
-	 public void setGenre(String genre) {
-		 model.setGenre(genre);
-	 }
-	 public String getGenre() {
-		 return model.getGenre();
-	 }
-	 public void setRYear(int releaseYear) {
-		 model.setRYear(releaseYear);
-	 }
-	 public int getRYear() {
-		 return model.getRYear();
-	 }
-	 public void setRating(int rating) {
-		 model.setRating(rating);
-	 }
-	 public int getRating() {
-		 return model.getRating();
-	 }
-	 public void setCStatus(String completionStatus) {
-		 model.setCStatus(completionStatus);
-	 }
-	 public String getCStatus() {
-		 return model.getCStatus();
-	 }
-	 public void updateView() {
-		 view.printGameDetails(model.getTitle(), model.getGenre(), model.getRYear(), model.getRating(), model.getCStatus());
-	 }
-	 public void showDetails() {
-		 view.showGameDetails(model.getTitle(), model.getGenre(), model.getRYear(), model.getRating(), model.getCStatus());
-	 }
-}

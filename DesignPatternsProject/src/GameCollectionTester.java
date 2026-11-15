@@ -1,43 +1,31 @@
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GameCollectionTester {
 	public static void main(String[] args) {
-			GameController g1 = new GameController();
-			Staff s2 = new Staff(1234567, "Peter Joe", "Cork", 81000);
-			try {
-			FileOutputStream fo = new FileOutputStream("Staff.ser");
-			ObjectOutputStream oo = new ObjectOutputStream(fo);
-			//oo.writeObject(s1);
-			ArrayList<Staff> staffList = new ArrayList();
-			staffList.add(s1);
-			staffList.add(s2);
-			oo.writeObject(staffList);
-			oo.close();
-			}catch (Exception e) {
-				System.out.println("theres a problem");
-			}
-			try {
-				FileInputStream fi = new FileInputStream("Staff.Ser");
-				ObjectInputStream oi = new ObjectInputStream(fi);
-				ArrayList<Staff> listOfStaff = (ArrayList) oi.readObject();
-				for (Staff s : listOfStaff) {
-					System.out.println(s.getName());
-				}
-				//Staff s = (Staff) oi.readObject();
-				//Staff ss = (Staff) oi.readObject();
-				//System.out.println(s.getName());
-				//System.out.println(ss.getName());
-				oi.close();
-			}catch (Exception e1) {
-				System.out.print("theres a problem 2");
-			}
-			
-		}
+		GameModel model = new GameModel();
+		
+//		Scanner scanner = new Scanner(System.in);
+//		
+//		System.out.println("What would you like to do?");
+//		System.out.println("1) Add a game to the colletion");
+//		System.out.println("2) View game collection");
+//		System.out.println("3) Edit a game in the collection");
+//		System.out.println("4) Delelte a game in the collection");
+//		int choice = scanner.nextInt();
+		
+		model.setTitle("Minecraft");
+		model.setGenre("Survival/Adventure");
+		model.setRYear(2011);
+		model.setRating(10);
+		model.setCStatus("Completed");
+		GameView view = new GameView();
+		view.showGameDetails(model.getTitle(), model.getGenre(), model.getRYear(), model.getRating(), model.getCStatus());
+		
+		GameController controller = new GameController(model, view);
+		controller.updateView();
+		controller.setGameTitle("The Forest");
+		controller.updateView();
+		
+		controller.showDetails();
 	}
-
 }
