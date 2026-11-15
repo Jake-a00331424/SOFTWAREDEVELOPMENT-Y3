@@ -22,7 +22,7 @@ public class GameView {
 		JLabel ratingLTemp = new JLabel();
 		ratingLTemp.setText(String.valueOf(rating));
 		JLabel completionStatusL = new JLabel(completionStatus);
-		JLabel welcomeLabel = new JLabel("Welcome to the Game Colelction Library");
+		JLabel welcomeLabel = new JLabel("Welcome to the Game Collection Library");
 		
 		
 		JButton addBttn = new JButton("Add a game");
